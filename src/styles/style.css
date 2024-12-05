@@ -11,7 +11,13 @@ body {
     border-radius: 10px;
     padding: 35px 40px;
     background-color: #141414;
+}
+
+.container header {
     color: #B2B2B2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 header h2 {
@@ -41,4 +47,74 @@ header .column span {
     background-color: #4B4B4B;
     cursor: pointer;
     position: relative;
+}
+
+.key-check input::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 0.3rem;
+    border-radius: inherit;
+    background-color: #8C8C8C;
+    position: absolute;
+    transform: translateY(-50%);
+    transition: all 0.5s;
+}
+
+.key-check input:checked::before {
+    left: 2.1rem;
+    background-color: #FFFFFF;
+}
+
+.piano-keys {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+}
+
+.piano-keys .key {
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.piano-keys .white {
+    width: 70px;
+    height: 230px;
+    border: 1px solid #141414;
+    border-radius: 8px;
+    background: linear-gradient(#FFFFFF 96%, #EEEEEE 4%);
+}
+
+.piano-keys .white:active {
+    box-shadow: inset -5px 5px 20px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to bottom #FFFFFF 0%, #EEEEEE 100%);
+}
+
+.piano-keys .black {
+    width: 44px;
+    height: 140px;
+    z-index: 2;
+    margin: 0px -22px 0px -22px;
+    border: 1px solid #141414;
+    border-radius: 0px 0px 5px 5px;
+    background: linear-gradient(#333333, #000000);
+}
+
+.piano-keys .black:active {
+    box-shadow: inset -5px 5px 10px rgba(255, 255, 255, 0.1);
+    background: linear-gradient(to bottom #000000, #434343);
+}
+
+
+.piano-keys .key span {
+    position: absolute;
+    bottom: 20px;
+    color: #A2A2A2;
+    width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
 }
